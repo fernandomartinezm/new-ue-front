@@ -1,0 +1,48 @@
+
+  .icon {
+    position: relative;
+    display: inline-block;
+    min-width: 20px;
+    min-height: 20px;
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &.icon-facebook{
+      &:after {
+        background: url($assets-img-path + "social-icon-facebook.png") no-repeat 0;
+      }
+    }
+    &.icon-twitter{
+      &:after {
+        background: url($assets-img-path + "social-icon-twitter.png") no-repeat 0;
+      }
+    }
+    &.icon-linkedin{
+      &:after {
+        background: url($assets-img-path + "social-icon-linkedin.png") no-repeat 0;
+      }
+    }
+    &.icon-instagram{
+      &:after {
+        background: url($assets-img-path + "social-icon-instagram.png") no-repeat 0;
+      }
+    }
+    &.icon-google{
+      &:after {
+        background: url($assets-img-path + "social-icon-google.png") no-repeat 0;
+      }
+    }
+    &.icon-youtube{
+      &:after {
+        background: url($assets-img-path + "social-icon-youtube.png") no-repeat 0;
+      }
+    }
+  }
+
+

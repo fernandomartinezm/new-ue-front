@@ -1,0 +1,316 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  &:after,
+  &:before {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+  }
+}
+
+a {
+  color: $c-main-primary;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+body {
+  text-align:left;
+  margin: 0;
+
+  &:after {
+    content: 'desktop';
+    display:none;
+  }
+
+  @include media($tablet) {
+    background: $c-white;
+    overflow-x: hidden;
+    position: relative;
+
+    &.slide-out-open {
+      overflow: hidden;
+      > #nav-responsive {
+        left: 0;
+      }
+    }
+
+    &:after {
+      content: 'mobile';
+      display:none;
+    }
+
+    font-size: 14px;
+
+  }
+  &.no-overflow {
+    overflow: hidden;
+  }
+}
+
+header, footer {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  height: 50px;
+  font: 15px $f-s-bold;
+  line-height: 18px;
+  color: $c-white;
+  border-radius: 25px;
+  text-align: center;
+  border: none;
+  min-width: 180px;
+  text-transform: uppercase;
+  transition: 0.5s;
+
+  &:focus {outline:0;}
+
+  &.btn {
+    &-primary {
+      background-color: $c-main-tertiary;
+      &:hover {
+        background-color: $c-main-tertiary-dark;
+      }
+      &:disabled{
+        background-color: $c-main-tertiary-faded;
+      }
+    }
+    &-secondary {
+      background-color: $c-white;
+      color: $c-main-tertiary;
+      border: 2px solid $c-main-tertiary;
+      &:hover {
+        color: $c-main-tertiary-dark;
+        border-color: $c-main-tertiary-dark;
+      }
+      &:disabled{
+        color: $c-main-tertiary-faded;
+        border-color: $c-main-tertiary-faded;
+      }
+    }
+    &-negative {
+      background-color: $c-white;
+      color: $c-black;
+
+      &:hover {
+        background-color: $c-supporting-primary;
+      }
+      &:disabled{
+        color: $c-grey-text-faded;
+        &:hover {
+          background-color: $c-white;
+        }
+      }
+    }
+    &-small {
+      min-width: 180px;
+    }
+    &-medium {
+      min-width: 240px;
+    }
+    &-large {
+      min-width: 300px;
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+
+}
+
+footer {
+  background-color: $c-black;
+}
+
+html {
+  background:#fff;
+}
+
+
+input[type='submit'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input {
+  border: 1px solid;
+}
+
+input.placeholder {
+  color: #555 !important;
+}
+
+label {
+  font: 12px $f-semi;
+  line-height: 20px;
+  display: block;
+
+  &.checkbox-container {
+    font: 11px $f-semi;
+  }
+}
+
+ul,li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bg-grey {
+  background-color: $c-supporting-tertiary;
+}
+
+.bg-white {
+  background-color: $c-white;
+}
+
+.box-shadow {
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(136, 110, 110, 0.3);
+  -moz-box-shadow: 0px 2px 3px 0px rgba(136, 110, 110, 0.3);
+  box-shadow: 0px 2px 3px 0px rgba(136, 110, 110, 0.3);
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.color-cube {
+  width: 200px;
+  height: 160px;
+  float: left;
+  position: relative;
+  font-size: 14px;
+  font-family: $f-s-bold;
+
+  p{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  &.white-text {
+    color: $c-white;
+  }
+  &.black-text {
+    color: $c-black;
+  }
+}
+
+.cols-2 {
+  @include clearfix;
+  width: 100%;
+  > .col {
+    width: 50%;
+    float: left;
+  }
+}
+
+.cols-3 {
+  @include clearfix;
+  width: 100%;
+  > .col {
+    width: 33%;
+    float: left;
+  }
+}
+
+.cols-4  {
+  @include clearfix;
+  width: 100%;
+  > .col {
+    width: 25%;
+    float: left;
+  }
+}
+
+.force-w100 {
+  width: 100% !important;
+  margin: 0 auto;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  clear: both;
+}
+
+.mrl-15 {
+  margin-left: 15px;
+}
+
+.pdt-15 {
+  padding-top: 15px;
+}
+
+.pdb-15 {
+  padding-bottom: 15px;
+}
+
+.pdt-25 {
+  padding-top: 25px;
+}
+
+.pdb-25 {
+  padding-bottom: 25px;
+}
+
+.pdt-50 {
+  padding-top: 50px;
+}
+
+.pdb-50 {
+  padding-bottom: 50px;
+}
+
+.text {
+  &-center {
+    text-align: center;
+  }
+  &-left {
+    text-align: left;
+  }
+  &-right {
+    text-align: right;
+  }
+  &-justify {
+    text-align: justify;
+  }
+}
+
+.w50 {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+
+  &:not(:first-child) {
+    padding-left: 15px;
+  }
+
+  @include media($mobile) {
+    width: 100%;
+    &:not(:first-child) {
+      padding-left: 0;
+    }
+  }
+}
+
+.w1200 {
+  max-width: 1200px;
+  margin: 0 auto;
+  @include clearfix ();
+  @include media($small_desktop) {
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+  }
+}
+
+
+

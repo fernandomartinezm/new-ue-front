@@ -1,0 +1,213 @@
+/*
+ ===========================
+ General variables,  colors, spacings, etc.
+ ===========================
+*/
+
+$assets-img-path: '/images/';
+
+// Main colors
+$c-main-primary: #000000;
+$c-main-secondary: #DE3831;
+$c-main-tertiary: #3D8FCB;
+$c-main-tertiary-dark: #3379AB;
+$c-main-tertiary-light: #3D8FC8;
+$c-main-tertiary-faded: #BDD3E3;
+$c-supporting-primary: #FFF1F1;
+$c-supporting-secondary: #F2F7F9;
+$c-supporting-tertiary: #F7F7F7;
+$c-white: #FFFFFF;
+$c-black: #000000;
+$c-grey-text: #5E5E5E;
+$c-grey-text-faded: #B2B2B2;
+
+// Define your breakpoints
+$small_desktop: 1199px;
+$tablet: 767px;
+$mobile: 401px;
+
+/*
+ ===========================
+ Mixins, helpers, etc
+ ===========================
+*/
+
+$font-base: 16;
+
+// ----- rem ----- //
+//REM conversor
+//use:
+//  .element {
+//    height: rem(50);
+//   }
+@function rem($size) {
+  @return #{$size / $font-base}rem;
+}
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    src: font-url('#{$file-path}.eot');
+    src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+         font-url('#{$file-path}.woff2') format('woff2'),
+         font-url('#{$file-path}.woff') format('woff'),
+         font-url('#{$file-path}.ttf') format('truetype'),
+         font-url('#{$file-path}.svg##{$font-family}') format('svg');
+  }
+}
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {clear: both;}
+  & {zoom: 1; }
+}
+
+.hidden {
+  display: none !important;
+}
+
+// Box sizing
+@mixin bsbb {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+
+// Añade una flechita, por ejemplo a los listados.
+
+@mixin triangle-bullet {
+  &:before {
+    content: "";
+    border-color: transparent #B7B6B4;
+    border-style: solid;
+    border-width: 4px 0 4px 4px;
+    display: block;
+    height: 0;
+    width: 0;
+    left: -0.8em;
+    top: 0.9em;
+    position: relative;
+  }
+}
+
+@mixin triangle-bullet-medium {
+  &:before {
+    content: '';
+    display: block;
+    height: 7px;
+    width: 7px;
+    left: -0.8em;
+    top: 0.9em;
+    position: relative;
+    background: url('data:image/svg+xml;utf8,<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="6px" height="7px" viewBox="0 0 6 7" enable-background="new 0 0 6 7" xml:space="preserve"><polygon id="icon-:-arrow_filled" fill="%23DE3831" points="0.5,0.4 0.5,6.6 5.5,3.5 "/></svg>') no-repeat 0 0 #fff;
+  }
+}
+
+@mixin soft_shadow($radius:0px) {
+  border:1px solid #e0e0e0;
+
+  -moz-border-radius:$radius;
+  -webkit-border-radius:$radius;
+  border-radius:$radius;
+
+  -moz-box-shadow:0px 1px 2px rgba(204,204,204,0.65);
+  -webkit-box-shadow:0px 1px 2px rgba(204,204,204,0.65);
+  box-shadow:0px 1px 2px rgba(204,204,204,0.65);
+}
+
+
+
+
+// Example of a whole load of mixins to make round corners
+// (including individual corners) easy to remember in SASS
+@mixin roundcorners($radius) {
+  -moz-border-radius: $radius; // firefox
+  -webkit-border-radius: $radius; // safari/chrome
+  border-radius: $radius; // CSS3, works in IE9
+}
+
+@mixin roundcorner1($radius, $corner: "top-left") {
+  -moz-border-#{$corner}-radius: $radius ; // firefox
+  -webkit-border-#{$corner}-radius: $radius; // safari/chrome
+  border-#{$corner}-radius: $radius; // CSS3, works in IE9
+}
+@mixin squarecorner1($corner: "top-left") {
+@include roundcorner1(0px, $corner);
+}
+
+@mixin roundcornerTL($radius:5px) { @include roundcorner1($radius, "top-left"); }
+@mixin roundcornerTR($radius:5px) { @include roundcorner1($radius, "top-right"); }
+@mixin roundcornerBL($radius:5px) { @include roundcorner1($radius, "bottom-left"); }
+@mixin roundcornerBR($radius:5px) { @include roundcorner1($radius, "bottom-right"); }
+@mixin squarecornerTL() { @include roundcornerTL(0px); }
+@mixin squarecornerTR() { @include roundcornerTR(0px); }
+@mixin squarecornerBL() { @include roundcornerBL(0px); }
+@mixin squarecornerBR() { @include roundcornerBR(0px); }
+
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@mixin media($breakpoint) {
+  @media only screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+
+// Most simplistic application of above
+.rounded {
+@include roundcorners(5px);
+}
+
+.roundedTop {
+@include roundcornerTL(5px);
+@include roundcornerTR(5px);
+}
+
+// Helpers
+
+.desktop-only {
+
+}
+
+.hide-on-mobile {
+  display: block;
+}
+
+.mobile-only{
+  display: none !important;
+}
+
+.tablet-only{
+  display: none !important;
+}
+
+.mobile-only-inline {
+  display: none;
+}
+
+.tablet-only-inline {
+  display: none;
+}

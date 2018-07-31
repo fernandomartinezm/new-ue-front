@@ -1,0 +1,184 @@
+footer {
+
+  a {
+    font: rem(15) $f-regular;
+    line-height: rem(30);
+    color: $c-white;
+  }
+  h4 {
+    font: rem(15) $f-s-bold;
+    line-height: rem(22);
+    text-transform: uppercase;
+    margin-bottom: rem(10);
+  }
+
+  &>* {
+    color: $c-white;
+  }
+
+  .bottom-section {
+    &__links {
+      justify-content: center;
+      display: flex;
+      padding: 30px 0;
+      a {
+        font: rem(12) $f-regular;
+        line-height: rem(24);
+        padding: 0 34px;
+        position: relative;
+        &:not(:last-child) {
+          &::after {
+            content: "";
+            height: 100%;
+            width: 1px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: $c-main-secondary;
+          }
+        }
+        @include media($mobile) {
+          display: block;
+          padding: 0 20px 0 0;
+          margin-right: 20px;
+          &:last-child {
+            margin-right: 0;
+            padding-right: 0;
+          }
+        }
+      }
+      @include media($mobile) {
+        justify-content: space-around;
+      }
+    }
+    &__logos {
+      padding: 29px 0 35px 0;
+      align-items: center;
+      .logos {
+        padding-top: 37px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-basis: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        @include media($mobile) {
+          padding-top: 20px;
+          justify-content: space-between;
+          align-content: space-between;
+        }
+        div {
+          color: #000;
+        }
+        .logo {
+          display: block;
+          &:not(:first-child) {
+            padding-left: 69px;
+            @include media($mobile) {
+              padding-left: 30px;
+            }
+          }
+        }
+      }
+      .title {
+        h4 {
+          font: rem(15) $f-regular;
+          line-height: rem(20);
+          color: $c-grey-text;
+          text-transform: none;
+          position: relative;
+          span {
+            position: relative;
+            z-index: 1;
+            background-color: $c-white;
+            padding: 0 30px;
+            @include media($mobile) {
+              padding: 0;
+            }
+          }
+          &:after {
+            content: "";
+            position: absolute;
+            background-color: $c-main-secondary;
+            width: 100%;
+            height: 1px;
+            top: rem(10);
+            left: 0;
+            @include media($mobile) {
+              display: none;
+            }
+          }
+        }
+      }
+      @include media($mobile) {
+        padding: 29px 0 35px;
+      }
+    }
+  }
+  .middle-section {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: row;
+    a {
+      display: block;
+    }
+    section {
+      text-align: center;
+      a, h4 {
+        text-align: center;
+        @include media($mobile) {
+          text-align: left;
+        }
+      }
+      &:first-child {
+        text-align: right;
+        @include media($mobile) {
+          text-align: left;
+        }
+      }
+      &:last-child {
+        text-align: left;
+        @include media($mobile) {
+          text-align: left;
+        }
+      }
+      @include media($mobile) {
+        text-align: left;
+        padding: 0;
+        &:not(:last-child) {
+          padding-bottom: 30px;
+        }
+      }
+    }
+
+    @include media($mobile) {
+      flex-direction: column;
+    }
+  }
+  .social-link {
+    &:not(:last-child) {
+      padding: 0 36px;
+    }
+    @include media($mobile) {
+      display: block;
+      &:not(:last-child) {
+        padding: 0;
+      }
+    }
+  }
+  .red-border {
+    border-top: 1px solid $c-main-secondary;
+    border-bottom: 1px solid $c-main-secondary;
+  }
+  .top-section {
+    padding: 35px 0;
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    justify-content: center;
+    @include media($mobile) {
+      justify-content: space-between;
+      padding: 35px 0;
+    }
+  }
+}
