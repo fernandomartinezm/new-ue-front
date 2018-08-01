@@ -1,5 +1,6 @@
 /*** Elements ***/
-import "./elements/sticky"
+import "./elements/sticky-header";
+import "./elements/megamenu";
 
 
 /*** Styles ***/

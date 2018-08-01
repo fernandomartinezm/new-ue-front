@@ -6,7 +6,6 @@ const devConfig = {
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
-        host: '0.0.0.0',
         contentBase: './dist',
         compress: true,
         port: 9000

@@ -9,6 +9,14 @@ header {
     }
   }
 
+  h5 {
+    font: rem(15) $futura-bold;
+    line-height: rem(22px);
+    color: $c-grey-text-menu;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
   ul {
     display: flex;
     flex-direction: row;
@@ -18,48 +26,6 @@ header {
       align-items: center;
       &.search-link {
         padding: 12px 10px;
-      }
-    }
-  }
-
-  .top-menu {
-    border-bottom: 1px solid $c-main-secondary;
-    &__links {
-      display: flex;
-      flex-direction: row;
-      ul {
-        justify-content: flex-start;
-        li {
-          font: rem(12) $futura-light;
-          line-height: rem(15);
-          padding: 12px 25px;
-          color: $c-grey-text-dark;
-          border-left: 1px solid $c-main-secondary;
-
-          button {
-            &.header-btn {
-            }
-          }
-          .icon-phone {
-            margin-right: 10px;
-          }
-          &.text-higlighted-blue {
-            font: rem(15) $futura-bold;
-            line-height: rem(18);
-            color: $c-main-tertiary;
-            text-transform: uppercase;
-          }
-          &.no-padding {
-            padding: 0;
-          }
-        }
-        &.floated-right {
-          li {
-            &:last-child {
-              border-right: 1px solid $c-main-secondary;
-            }
-          }
-        }
       }
     }
   }
@@ -123,6 +89,50 @@ header {
     margin-left: auto;
   }
 
+  .megamenu-content {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 0;
+    min-width: 230px;
+    background-color: $c-white;
+    &.open {
+      display: block;
+    }
+  }
+
+  .megamenu-trigger {
+    position: relative;
+    &.active {
+      &:after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: $c-main-secondary;
+        position: absolute;
+        top: 58px;
+        left: 0;
+      }
+    }
+  }
+
+  .menu-container {
+    display: flex;
+    flex-direction: row;
+    &__group {
+      width: 70%;
+      a {
+        font: rem(15) $muli-regular;
+        line-height: rem(18);
+        display: block;
+        color: $c-black;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
   .private-area-link {
     background-color: $c-main-tertiary;
     .icon {
@@ -161,6 +171,55 @@ header {
     }
     .hide-when-sticky {
       display: none;
+    }
+    .megamenu-trigger {
+      &.active {
+        &:after {
+          top: 49px;
+        }
+      }
+    }
+  }
+
+  .top-menu {
+    border-bottom: 1px solid $c-main-secondary;
+    &__links {
+      display: flex;
+      flex-direction: row;
+      ul {
+        justify-content: flex-start;
+        li {
+          font: rem(12) $futura-light;
+          line-height: rem(15);
+          padding: 12px 25px;
+          color: $c-grey-text-dark;
+          border-left: 1px solid $c-main-secondary;
+
+          button {
+            &.header-btn {
+            }
+          }
+          .icon-phone {
+            margin-right: 10px;
+          }
+          &.text-higlighted-blue {
+            font: rem(15) $futura-bold;
+            line-height: rem(18);
+            color: $c-main-tertiary;
+            text-transform: uppercase;
+          }
+          &.no-padding {
+            padding: 0;
+          }
+        }
+        &.floated-right {
+          li {
+            &:last-child {
+              border-right: 1px solid $c-main-secondary;
+            }
+          }
+        }
+      }
     }
   }
 
