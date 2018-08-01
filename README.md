@@ -21,6 +21,7 @@ Arquitectura de la parte Front para el proyecto de la Universidad Europea.
 
 Es necesario tener 2 terminales abiertos además de tener instalado el gestor de paquetes "Yarn" en el sistema.
 
+- Ejecutar "yarn install" para instalar las dependencias.
 - Ejecutar "yarn watch" para generar los ficheros necesarios.
 - Ejecutar "yarn start" para arrancar el servidor de desarrollo
 - El proyecto abrirá el navegador, en caso contrario, desde: [localhost:9000](http://localhost:9000/) se puede encontrar el proyecto.
