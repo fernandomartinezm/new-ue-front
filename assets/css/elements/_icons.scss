@@ -18,24 +18,44 @@
         background: url($assets-img-path + "social-icon-facebook.png") no-repeat 0;
       }
     }
-    &.icon-twitter{
+    &.icon-google{
       &:after {
-        background: url($assets-img-path + "social-icon-twitter.png") no-repeat 0;
+        background: url($assets-img-path + "social-icon-google.png") no-repeat 0;
       }
     }
-    &.icon-linkedin{
-      &:after {
-        background: url($assets-img-path + "social-icon-linkedin.png") no-repeat 0;
-      }
-    }
+
     &.icon-instagram{
       &:after {
         background: url($assets-img-path + "social-icon-instagram.png") no-repeat 0;
       }
     }
-    &.icon-google{
+
+    &.icon-linkedin{
       &:after {
-        background: url($assets-img-path + "social-icon-google.png") no-repeat 0;
+        background: url($assets-img-path + "social-icon-linkedin.png") no-repeat 0;
+      }
+    }
+    &.icon-phone{
+      &:after {
+        background: url($assets-img-path + "icon-phone.svg") no-repeat 0;
+        background-size: contain;
+      }
+    }
+    &.icon-search{
+      &:after {
+        background: url($assets-img-path + "icon-search.svg") no-repeat 0;
+        background-size: contain;
+      }
+    }
+    &.icon-twitter{
+      &:after {
+        background: url($assets-img-path + "social-icon-twitter.png") no-repeat 0;
+      }
+    }
+    &.icon-user-white{
+      &:after {
+        background: url($assets-img-path + "icon-user-white.svg") no-repeat 0;
+        background-size: contain;
       }
     }
     &.icon-youtube{

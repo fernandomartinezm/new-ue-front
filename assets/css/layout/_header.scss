@@ -1,0 +1,127 @@
+header {
+  margin-bottom: 50px;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    li {
+      display: inline-flex;
+      align-items: center;
+      &.search-link {
+        padding: 12px 10px;
+      }
+    }
+  }
+
+  .top-menu {
+    border-bottom: 1px solid $c-main-secondary;
+    button {
+      height: 20px;
+      min-width: 20px;
+    }
+    &__links {
+      display: flex;
+      flex-direction: row;
+      ul {
+        justify-content: flex-start;
+        li {
+          font: rem(12) $futura-light;
+          line-height: rem(15);
+          padding: 12px 25px;
+          color: $c-grey-text-dark;
+          border-left: 1px solid $c-main-secondary;
+
+          .icon-phone {
+            margin-right: 10px;
+          }
+          &.text-higlighted-blue {
+            font: rem(15) $futura-bold;
+            line-height: rem(18);
+            color: $c-main-tertiary;
+            text-transform: uppercase;
+          }
+        }
+        &.floated-right {
+          li {
+            &:last-child {
+              border-right: 1px solid $c-main-secondary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom-menu{
+    &__content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 18px 0;
+
+      nav {
+        ul {
+          li {
+            & + li {
+              margin-left: 65px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .centered {
+    margin: 0 auto;
+  }
+
+  .floated-left {
+    margin-right: auto;
+  }
+
+  .floated-right {
+    margin-left: auto;
+  }
+
+  .private-area-link {
+    .icon {
+      vertical-align: bottom;
+    }
+  }
+
+  .sticky-links {
+    li {
+      &.only-sticky {
+        display: none;
+      }
+    }
+  }
+
+  &.sticky-menu {
+    li {
+      &.only-sticky {
+        display: inline-flex;
+      }
+    }
+    .bottom-menu{
+      border-bottom: 1px solid $c-main-secondary;
+      &__content {
+        padding: 12px 0;
+      }
+    }
+    .hide-when-sticky {
+      display: none;
+    }
+  }
+
+  .two-line-link {
+    color: $c-black;
+    font-size: rem(15);
+    line-height: rem(18);
+    font-family: $futura-bold;
+    span {
+      font-family: $futura-light;
+      display: block;
+    }
+  }
+}

@@ -61,7 +61,7 @@ header, footer {
 button {
   cursor: pointer;
   height: 50px;
-  font: 15px $f-s-bold;
+  font: 15px $futura-bold;
   line-height: 18px;
   color: $c-white;
   border-radius: 25px;
@@ -70,6 +70,7 @@ button {
   min-width: 180px;
   text-transform: uppercase;
   transition: 0.5s;
+  background-color: transparent;
 
   &:focus {outline:0;}
 
@@ -151,12 +152,12 @@ input.placeholder {
 }
 
 label {
-  font: 12px $f-semi;
+  font: 12px $muli-semi;
   line-height: 20px;
   display: block;
 
   &.checkbox-container {
-    font: 11px $f-semi;
+    font: 11px $muli-semi;
   }
 }
 
@@ -190,7 +191,7 @@ ul,li {
   float: left;
   position: relative;
   font-size: 14px;
-  font-family: $f-s-bold;
+  font-family: $futura-bold;
 
   p{
     position: absolute;
@@ -282,6 +283,13 @@ ul,li {
   &-justify {
     text-align: justify;
   }
+}
+
+.text-higlighted-blue {
+  font: rem(15) $futura-bold;
+  line-height: rem(18);
+  color: $c-main-tertiary;
+  text-transform: uppercase;
 }
 
 .w50 {

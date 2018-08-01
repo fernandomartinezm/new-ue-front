@@ -108,15 +108,15 @@ $cf_bold:         'Muli-SemiBold';
 $cf_bolder:       'Muli-Bold';
 $corporate_serif: Georgia, Times, 'Times New Roman';
 
-$f-regular: 'Muli-Regular',  sans-serif;
-$f-semi:    'Muli-SemiBold', sans-serif;
-$f-bold:    'Muli-Bold', sans-serif;
+$muli-regular: 'Muli-Regular',  sans-serif;
+$muli-semi:    'Muli-SemiBold', sans-serif;
+$muli-bold:    'Muli-Bold', sans-serif;
 
 $cf_secondary_light: 'Futura-Light';
 $cf_secondary_bold: 'Futura-Bold';
 
-$f-s-light: 'Futura-Light', sans-serif;
-$f-s-bold: 'Futura-Bold', sans-serif;
+$futura-light: 'Futura-Light', sans-serif;
+$futura-bold: 'Futura-Bold', sans-serif;
 
 
 html {
@@ -146,7 +146,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 h1, .h1 {
-  font: rem(52) $f-s-bold;
+  font: rem(52) $futura-bold;
   line-height: rem(62);
   @include media($mobile) {
     font-size: rem(30);
@@ -155,7 +155,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font: rem(24) $f-s-light;
+  font: rem(24) $futura-light;
   line-height: rem(32);
   @include media($mobile) {
     font-size: rem(18);
@@ -164,7 +164,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font: rem(24) $f-s-bold;
+  font: rem(24) $futura-bold;
   line-height: rem(29);
   @include media($mobile) {
     font-size: rem(20);
@@ -173,7 +173,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font: rem(18) $f-semi;
+  font: rem(18) $muli-semi;
   line-height: rem(23);
   @include media($mobile) {
     font-size: rem(16);
@@ -182,7 +182,7 @@ h4, .h4 {
 }
 
 h5, .h5 {
-  font: rem(15) $f-regular;
+  font: rem(15) $muli-regular;
   line-height: rem(20);
   color: $c-grey-text;
   @include media($mobile) {
@@ -192,7 +192,7 @@ h5, .h5 {
 }
 
 h6, .h6 {
-  font: rem(12) $f-s-bold;
+  font: rem(12) $futura-bold;
   line-height: rem(15);
   color: $c-grey-text;
   @include media($mobile) {
@@ -202,7 +202,7 @@ h6, .h6 {
 }
 
 .title-condensed {
-  font: rem(70) $f-s-bold;
+  font: rem(70) $futura-bold;
   line-height: rem(64);
   max-width: 190px;
   text-align: left;
