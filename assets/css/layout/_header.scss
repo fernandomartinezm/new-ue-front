@@ -175,7 +175,8 @@ header {
     .megamenu-trigger {
       &.active {
         &:after {
-          top: 49px;
+          top: 50px;
+          z-index: 21;
         }
       }
     }
