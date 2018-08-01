@@ -1,6 +1,14 @@
 header {
   margin-bottom: 50px;
 
+  button {
+    &.header-btn {
+      height: 20px;
+      min-width: 20px;
+      border-radius: 0;
+    }
+  }
+
   ul {
     display: flex;
     flex-direction: row;
@@ -15,10 +23,6 @@ header {
 
   .top-menu {
     border-bottom: 1px solid $c-main-secondary;
-    button {
-      height: 20px;
-      min-width: 20px;
-    }
     &__links {
       display: flex;
       flex-direction: row;
@@ -31,6 +35,10 @@ header {
           color: $c-grey-text-dark;
           border-left: 1px solid $c-main-secondary;
 
+          button {
+            &.header-btn {
+            }
+          }
           .icon-phone {
             margin-right: 10px;
           }
@@ -39,6 +47,9 @@ header {
             line-height: rem(18);
             color: $c-main-tertiary;
             text-transform: uppercase;
+          }
+          &.no-padding {
+            padding: 0;
           }
         }
         &.floated-right {
@@ -58,6 +69,7 @@ header {
       flex-direction: row;
       align-items: center;
       padding: 18px 0;
+      background-color: $c-white;
 
       nav {
         ul {
@@ -67,6 +79,30 @@ header {
             }
           }
         }
+      }
+
+      ul {
+        &.sticky-links {
+          li {
+            border-left: 1px solid $c-main-secondary;
+            padding: 0 20px;
+            &.no-padding {
+              padding: 0;
+            }
+          }
+        }
+      }
+
+      .header-btn {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-top: -20px;
+        margin-bottom: -20px;
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
       }
     }
   }
@@ -84,6 +120,7 @@ header {
   }
 
   .private-area-link {
+    background-color: $c-main-tertiary;
     .icon {
       vertical-align: bottom;
     }
@@ -97,7 +134,12 @@ header {
     }
   }
 
-  &.sticky-menu {
+  .sticky-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+
     li {
       &.only-sticky {
         display: inline-flex;
@@ -106,7 +148,7 @@ header {
     .bottom-menu{
       border-bottom: 1px solid $c-main-secondary;
       &__content {
-        padding: 12px 0;
+        padding: 0;
       }
     }
     .hide-when-sticky {

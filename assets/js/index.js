@@ -1,5 +1,5 @@
 /*** Elements ***/
-
+import "./elements/sticky"
 
 
 /*** Styles ***/
