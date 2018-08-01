@@ -13,6 +13,7 @@ header {
     display: flex;
     flex-direction: row;
     li {
+      position: relative;
       display: inline-flex;
       align-items: center;
       &.search-link {
@@ -89,6 +90,9 @@ header {
             &.no-padding {
               padding: 0;
             }
+            &:last-child {
+              border-right: 1px solid $c-main-secondary;
+            }
           }
         }
       }
@@ -150,6 +154,10 @@ header {
       &__content {
         padding: 0;
       }
+    }
+    .container-logo {
+      padding-top: 12px;
+      padding-bottom: 5px;
     }
     .hide-when-sticky {
       display: none;
